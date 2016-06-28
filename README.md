@@ -1,1 +1,1 @@
-# raspi_lsm9ds1
+# Raspberry PIL LSM9DS1 LIB
