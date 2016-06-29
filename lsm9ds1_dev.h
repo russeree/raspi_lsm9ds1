@@ -25,22 +25,22 @@ class Lsm9ds1Mag
     public:
         Lsm9ds1Mag();
         virtual ~Lsm9ds1Mag();
-    Private:
+        static void write_byte_with_offset(char *byte, char *data, int offset);
+        static void write_byte(char *byte, char *data);
+    private:
         // Sensor Outputs
         short gx, gy, gz; 
         short ax, ay, az;
         short mx, my, mz;
         short temp;
     public:
-        class MagCrtlReg1M
-        {
+        class CtrlReg1M{
             public:
-                MagCtrlReg1M();
-                virtual ~MagCtrlReg1M();
-                void write_reg(char reg_value);
-            private:
-                char reg_value_stor;
-
+                CtrlReg1M();
+                virtual ~CtrlReg1M();
+            public:
+                char reg_write;
+                char reg_read;
         };
 };
 

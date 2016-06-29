@@ -11,6 +11,7 @@
 
 // LSM9DS1 REGISTER MAPPING
 #include "lsm9ds1.h"
+#include "lsm9ds1_dev.h"
 
 #define AG_ADDRESS    (0x6B)
 #define MAG_ADDRESS   (0x1E)

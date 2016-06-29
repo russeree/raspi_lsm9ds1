@@ -82,16 +82,31 @@
 #define MAG_INT_THS_L_M       0x32   // R
 #define MAG_INT_THS_H_M       0x33   // R
 
+
+/* BIG ENDIAN */ 
 // MAG Secific Values
 
-// X and Y axes op. mode selection
+// CRTL_REG_1_M
+#define TEMP_COMP_OS          0
+#define OM_OS                 1
+#define DO_OS                 3
+#define FAST_ODR_OS           6
+#define ST_OS                 7
+// X and Y axes op mode selection 
 #define MAG_LOW_PWR           0x00
 #define MAG_MED_PERF          0x01
 #define MAG_HIGH_PERF         0x02
 #define MAG_UHIGH_PERF        0x03
-
 // ODR Configuration
-#define MAG_00625             0x00
+#define MAG_0625              0x00
+#define MAG_0125              0x01
+#define MAG_0250              0x02
+#define MAG_0500              0x03
+#define MAG_1000              0x04
+#define MAG_2000              0x05
+#define MAG_4000              0x06
+#define MAG_8000              0x07
+
 
 
 #endif
