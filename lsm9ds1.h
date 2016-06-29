@@ -107,6 +107,4 @@
 #define MAG_4000              0x06
 #define MAG_8000              0x07
 
-
-
 #endif
