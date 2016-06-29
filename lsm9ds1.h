@@ -79,7 +79,19 @@
 #define MAG_OUT_Z_H_M         0x2D   // R       00101101
 #define MAG_INT_CFG_M         0x30   // RW
 #define MAG_INT_SRC_M         0x31   // R
-#define MAG_INT_THS_L_M       0x32   // R#define MAG_INT_THS_H_M #endif
-#define MAG_INT_THS_H_M #endif
+#define MAG_INT_THS_L_M       0x32   // R
+#define MAG_INT_THS_H_M       0x33   // R
+
+// MAG Secific Values
+
+// X and Y axes op. mode selection
+#define MAG_LOW_PWR           0x00
+#define MAG_MED_PERF          0x01
+#define MAG_HIGH_PERF         0x02
+#define MAG_UHIGH_PERF        0x03
+
+// ODR Configuration
+#define MAG_00625             0x00
+
 
 #endif
