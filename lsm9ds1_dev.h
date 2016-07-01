@@ -2,6 +2,7 @@
 #define LSM9DS1_MAG_DEV
 
 #include "lsm9ds1.h"
+#include <iostream>
 
 namespace lam9ds1
 {
@@ -28,10 +29,10 @@ class Lsm9ds1Mag
         {
             public:
                 reg_params();
-                reg_params(char location, int offset, a_type data); 
+                reg_params(unsigned char location, unsigned int offset, unsigned int size, a_type data); 
                 virtual ~reg_params();
             protected:
-                char location;
+                unsigned char location;
                 int offset;
                 a_type data;
         };
@@ -40,9 +41,8 @@ class Lsm9ds1Mag
     public:
         Lsm9ds1Mag();
         virtual ~Lsm9ds1Mag();
-        static void write_byte_with_offset(char *byte, char data, int offset);
-        static void write_byte(char *byte, char *data);
-        static bool bool_to_char(bool *input);
+        static void write_byte_with_offset(unsigned char &byte, unsigned char data, int offset, int size);;
+        static unsigned char  bool_to_char(bool &input);
     // Sensor Outputs
     private:
         // Sensor Outputs
@@ -63,17 +63,17 @@ class Lsm9ds1Mag
             public:
                 CtrlReg1M();
                 virtual ~CtrlReg1M();
-                void init(bool temp_comp, char op_mode, char do_rate, bool fast_odr, bool self_test);
+                void init(bool temp_comp, unsigned char op_mode, unsigned char do_rate, bool fast_odr, bool self_test);
                 void gen_register(void);
             // Register Frame Varibles
             public:
                 bool temp_comp;
-                char op_mode;
-                char do_rate;
+                unsigned char op_mode;
+                unsigned char do_rate;
                 bool fast_odr;
                 bool self_test;
-                char reg_read;
-                char reg_write;
+                unsigned char reg_read;
+                unsigned char reg_write;
         };
 
     // Register State Storage 

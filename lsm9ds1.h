@@ -83,15 +83,21 @@
 #define MAG_INT_THS_H_M       0x33   // R
 
 
-/* BIG ENDIAN */ 
+/* Little ENDIAN */ 
 // MAG Secific Values
 
 // CRTL_REG_1_M
-#define TEMP_COMP_OS          0
-#define OM_OS                 1
-#define DO_OS                 3
-#define FAST_ODR_OS           6
-#define ST_OS                 7
+#define TEMP_COMP_OS          7 // Reg Sector Offsets
+#define OM_OS                 5
+#define DO_OS                 2
+#define FAST_ODR_OS           1
+#define ST_OS                 0
+#define TEMP_COMP_SZ          1 // Reg Sector Sizes
+#define OM_SZ                 2
+#define DO_SZ                 3
+#define FAST_ODR_SZ           1
+#define ST_SZ                 1
+
 // X and Y axes op mode selection 
 #define MAG_LOW_PWR           0x00
 #define MAG_MED_PERF          0x01

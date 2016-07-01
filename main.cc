@@ -54,7 +54,7 @@ int main(){
 
     printf ("Result: %02x\n", buf[0]);
     
-    lsm9ds1_0.ctrl_reg_1_m.init(false, (char)MAG_LOW_PWR, (char)MAG_8000, true, false);
+    lsm9ds1_0.ctrl_reg_1_m.init(true, (char)MAG_LOW_PWR, (char)MAG_8000, true, false);
     printf ( "Ctrl 1 Reg Value is %02x\n", lsm9ds1_0.ctrl_reg_1_m.reg_write);
 
     return 0;
