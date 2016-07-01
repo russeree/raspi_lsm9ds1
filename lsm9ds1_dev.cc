@@ -22,8 +22,9 @@ void Lsm9ds1Mag::write_byte_with_offset(unsigned char &byte, unsigned char data,
     for (int i = 0; i < size; i++)
     {
         unsigned char bit_val =  ((data >> i) & 0x01);
-        byte = (-bit_val ^ byte) & (1 << (offset + i));
+        byte ^= (-bit_val ^ byte) & (1 << i + offset);
     }
+     
 }
 
 /*
@@ -53,6 +54,7 @@ Lsm9ds1Mag::CtrlReg1M::~CtrlReg1M()
 
 void Lsm9ds1Mag::CtrlReg1M::init(bool temp_comp, unsigned char op_mode, unsigned char do_rate, bool fast_odr, bool self_test)
 { 
+    this -> reg_write = 0; 
     this -> temp_comp = temp_comp;
     this -> op_mode = op_mode;
     this -> do_rate = do_rate;
