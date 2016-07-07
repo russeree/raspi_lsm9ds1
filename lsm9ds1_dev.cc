@@ -2,13 +2,29 @@
 
 #include "lsm9ds1_dev.h"
 
-// Magnetometer Consturctor
+// Constructors
 Lsm9ds1Mag::Lsm9ds1Mag()
 {
 }
 
-// Magnetometer Desturctor
 Lsm9ds1Mag::~Lsm9ds1Mag()
+{
+}
+
+Lsm9ds1Mag::CtrlReg1M::CtrlReg1M()
+{
+}
+
+Lsm9ds1Mag::CtrlReg1M::~CtrlReg1M()
+{
+}
+
+Lsm9ds1Mag::CtrlReg2M::CtrlReg2M()
+{
+    this -> mask = 0x6C;
+}
+
+Lsm9ds1Mag::CtrlReg2M::~CtrlReg2M()
 {
 }
 
@@ -44,14 +60,6 @@ unsigned char Lsm9ds1Mag::bool_to_char(bool &input)
     return output;
 }
 
-Lsm9ds1Mag::CtrlReg1M::CtrlReg1M()
-{
-}
-
-Lsm9ds1Mag::CtrlReg1M::~CtrlReg1M()
-{
-}
-
 void Lsm9ds1Mag::CtrlReg1M::init(bool temp_comp, unsigned char op_mode, unsigned char do_rate, bool fast_odr, bool self_test)
 { 
     this -> reg_write = 0; 
@@ -71,3 +79,16 @@ void Lsm9ds1Mag::CtrlReg1M::gen_register(void)
     Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char((this -> fast_odr)), FAST_ODR_OS, FAST_ODR_SZ);
     Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char((this -> self_test)), ST_OS, ST_SZ);
 }
+
+void Lsm9ds1Mag::CtrlReg2M::init(bool reboot, bool soft_reset, unsigned char fs)
+{
+    this -> reboot = reboot;
+    this -> soft_reset = soft_reset;
+    this -> fs = fs;
+}
+
+void Lsm9ds1Mag::CtrlReg2M::gen_register(void)
+{
+    Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char((this -> reboot)), MAG_REBOOT_OS, MAG_REBOOT_SZ); 
+}
+

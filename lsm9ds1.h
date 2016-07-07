@@ -113,4 +113,19 @@
 #define MAG_4000              0x06
 #define MAG_8000              0x07
 
+// CTRL_REG2_M
+#define MAG_FS_OS             5
+#define MAG_REBOOT_OS         3
+#define MAG_SOFT_RST_OS       2
+#define MAG_FS_SZ             2
+#define MAG_REBOOT_SZ         1
+#define MAG_SOFT_RST_SZ       1
+
+// Full Scale Set Value
+#define MAG_4_GAUSS           0x00
+#define MAG_8_GAUSS           0x01
+#define MAG_12_GAUSS          0x10
+#define MAG_16_GAUSS          0x11
+
+
 #endif

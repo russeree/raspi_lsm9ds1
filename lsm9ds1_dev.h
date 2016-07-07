@@ -75,10 +75,30 @@ class Lsm9ds1Mag
                 unsigned char reg_read;
                 unsigned char reg_write;
         };
-
+        /*
+         * Ctrl_Reg_2M Class: 
+         * @desc: A register containing the contents of the Control Register 2
+         */
+        class CtrlReg2M
+        {
+            // Functions
+            public:
+                CtrlReg2M();
+                virtual ~CtrlReg2M();
+                void init(bool reboot, bool soft_reset, unsigned char fs);
+                void gen_register(void);
+            public:
+                unsigned char mask; 
+                bool reboot;
+                bool soft_reset;
+                unsigned char fs;
+                unsigned char reg_read;
+                unsigned char reg_write;
+        };
     // Register State Storage 
     public:
         CtrlReg1M ctrl_reg_1_m;
+        CtrlReg2M ctrl_reg_2_m;
 };
 
 #endif 
