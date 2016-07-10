@@ -86,12 +86,15 @@
 /* Little ENDIAN */ 
 // MAG Secific Values
 
-// CRTL_REG_1_M
+/*
+ * CRTL_REG_1_M
+ */
 #define TEMP_COMP_OS          7 // Reg Sector Offsets
 #define OM_OS                 5
 #define DO_OS                 2
 #define FAST_ODR_OS           1
 #define ST_OS                 0
+
 #define TEMP_COMP_SZ          1 // Reg Sector Sizes
 #define OM_SZ                 2
 #define DO_SZ                 3
@@ -103,7 +106,7 @@
 #define MAG_MED_PERF          0x01
 #define MAG_HIGH_PERF         0x02
 #define MAG_UHIGH_PERF        0x03
-// ODR Configuration
+// ODR Configuration in HZ
 #define MAG_0625              0x00
 #define MAG_0125              0x01
 #define MAG_0250              0x02
@@ -113,20 +116,40 @@
 #define MAG_4000              0x06
 #define MAG_8000              0x07
 
-// CTRL_REG2_M
+/*
+ * CTRL_REG2_M
+ */
 #define MAG_CTRL_REG2_M_MASK  0x6C
 #define MAG_FS_OS             5
 #define MAG_REBOOT_OS         3
 #define MAG_SOFT_RST_OS       2
+
 #define MAG_FS_SZ             2
 #define MAG_REBOOT_SZ         1
 #define MAG_SOFT_RST_SZ       1
 
 // Full Scale Set Value
-#define MAG_4_GAUSS           0x00
-#define MAG_8_GAUSS           0x01
-#define MAG_12_GAUSS          0x10
-#define MAG_16_GAUSS          0x11
+#define MAG_4_GAUSS           0x00 // 4 Gauss Scale
+#define MAG_8_GAUSS           0x01 // 8 Gauss Scale
+#define MAG_12_GAUSS          0x02 // 12 Gauss Scale
+#define MAG_16_GAUSS          0x03 // 16 Gauss Scale
 
+/*
+ * CTRL_REG3_M
+ */
+#define MAG_I2C_DISABLE_OS    7
+#define MAG_LP_OS             5
+#define MAG_SIM_OS            2
+#define MAG_MD_OS             0
+
+#define MAG_I2C_DISABLE_SZ    1
+#define MAG_LP_SZ             1
+#define MAG_SIM_SZ            1
+#define MAG_MD_SZ             2
+
+#define MAG_MD_CONT_CNSV      0x00 // Continuous-conservation mode
+#define MAG_MD_SNGL_CNSV      0x01 // Single-conservation mode
+#define MAG_MD_PWR_DWN_0      0x02 // Power Down Mode 0
+#define MAG_MD_PWR_DWN_1      0x03 // Power Down Mode 1
 
 #endif

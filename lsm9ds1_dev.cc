@@ -21,7 +21,6 @@ Lsm9ds1Mag::CtrlReg1M::~CtrlReg1M()
 
 Lsm9ds1Mag::CtrlReg2M::CtrlReg2M()
 {
-    this -> mask = 0x6C;
 }
 
 Lsm9ds1Mag::CtrlReg2M::~CtrlReg2M()

@@ -94,6 +94,7 @@ class Lsm9ds1Mag
                 unsigned char reg_read;
                 unsigned char reg_write;
         };
+        class 
     // Register State Storage 
     public:
         CtrlReg1M ctrl_reg_1_m;
