@@ -87,8 +87,7 @@ class Lsm9ds1Mag
                 virtual ~CtrlReg2M();
                 void init(bool reboot, bool soft_reset, unsigned char fs);
                 void gen_register(void);
-            public:
-                unsigned char mask; 
+            public: 
                 bool reboot;
                 bool soft_reset;
                 unsigned char fs;

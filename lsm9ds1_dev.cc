@@ -89,6 +89,9 @@ void Lsm9ds1Mag::CtrlReg2M::init(bool reboot, bool soft_reset, unsigned char fs)
 
 void Lsm9ds1Mag::CtrlReg2M::gen_register(void)
 {
-    Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char((this -> reboot)), MAG_REBOOT_OS, MAG_REBOOT_SZ); 
+    Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char(this -> reboot), MAG_REBOOT_OS, MAG_REBOOT_SZ);
+    Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), Lsm9ds1Mag::bool_to_char(this -> soft_reset), MAG_SOFT_RST_OS, MAG_SOFT_RST_SZ);
+    Lsm9ds1Mag::write_byte_with_offset((this -> reg_write), this -> fs, MAG_FS_SZ, MAG_FS_OS);
+    this -> reg_write &= MAG_CTRL_REG2_M_MASK;  
 }
 

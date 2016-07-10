@@ -114,6 +114,7 @@
 #define MAG_8000              0x07
 
 // CTRL_REG2_M
+#define MAG_CTRL_REG2_M_MASK  0x6C
 #define MAG_FS_OS             5
 #define MAG_REBOOT_OS         3
 #define MAG_SOFT_RST_OS       2
