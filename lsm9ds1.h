@@ -85,6 +85,8 @@
 
 /* Little ENDIAN */ 
 // MAG Secific Values
+// The method of access is that all registers have functions per register
+// Each register is accessed via it's offset and size as a pointer per-say
 
 /*
  * CRTL_REG_1_M
@@ -94,7 +96,6 @@
 #define DO_OS                 2
 #define FAST_ODR_OS           1
 #define ST_OS                 0
-
 #define TEMP_COMP_SZ          1 // Reg Sector Sizes
 #define OM_SZ                 2
 #define DO_SZ                 3
@@ -123,7 +124,6 @@
 #define MAG_FS_OS             5
 #define MAG_REBOOT_OS         3
 #define MAG_SOFT_RST_OS       2
-
 #define MAG_FS_SZ             2
 #define MAG_REBOOT_SZ         1
 #define MAG_SOFT_RST_SZ       1
@@ -141,7 +141,6 @@
 #define MAG_LP_OS             5
 #define MAG_SIM_OS            2
 #define MAG_MD_OS             0
-
 #define MAG_I2C_DISABLE_SZ    1
 #define MAG_LP_SZ             1
 #define MAG_SIM_SZ            1
